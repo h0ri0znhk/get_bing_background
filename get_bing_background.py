@@ -3,6 +3,7 @@ import pprint
 import json
 from urllib import parse
 from os import path
+from datetime import date
 
 # TODO: Only download when file doesn't exist
 
@@ -18,8 +19,10 @@ url = "http://www.bing.com" + data["images"][0]["url"]
 
 print(url)
 
-# TODO: Append date
-filename = parse.parse_qs(parse.urlparse(url).query)['id'][0]
+# TODO: Prefix date
+
+today = date.today()
+filename = today.strftime('%Y%m%d_') + parse.parse_qs(parse.urlparse(url).query)['id'][0]
 
 homeFolder = path.expanduser("~")
 
