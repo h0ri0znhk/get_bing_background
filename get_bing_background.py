@@ -18,9 +18,6 @@ data = json.loads(r.text)
 url = "http://www.bing.com" + data["images"][0]["url"]
 
 print(url)
-
-# TODO: Prefix date
-
 today = date.today()
 filename = today.strftime('%Y%m%d_') + parse.parse_qs(parse.urlparse(url).query)['id'][0]
 
