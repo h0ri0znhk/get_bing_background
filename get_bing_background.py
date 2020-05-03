@@ -24,7 +24,7 @@ filename = today.strftime('%Y%m%d_') + parse.parse_qs(parse.urlparse(url).query)
 homeFolder = path.expanduser("~")
 
 # Save pictures to a folder
-pictureLocation = homeFolder + "/Pictures/"
+pictureLocation = homeFolder + "/Pictures/bing/"
 
 r = requests.get(url)
 
